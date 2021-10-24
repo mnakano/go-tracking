@@ -2,7 +2,6 @@ require('dotenv').config();
 const axios = require('axios');
 
 const roolURL = 'http://api.openmetrolinx.com/OpenDataAPI/api/V1/';
-
 const serviceAtAGlance = 'ServiceataGlance/Trains/All';
 
 (async() => {
