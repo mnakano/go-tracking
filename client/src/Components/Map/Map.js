@@ -32,9 +32,9 @@ const Map = (props) => {
     }, []);
 
     const handleApiLoaded = (map, maps) => {
-        const layer = new maps.KmlLayer({
+        new maps.KmlLayer({
             url: 'https://raw.githubusercontent.com/mnakano/go-tracking/main/kml/test2.kml',
-            map: map,
+            map: map
         });
     };
 
