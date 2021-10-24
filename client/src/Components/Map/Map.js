@@ -31,12 +31,22 @@ const Map = (props) => {
         return () => clearInterval(interval);
     }, []);
 
+    const handleApiLoaded = (map, maps) => {
+        console.log(maps)
+        maps.KmlLayer({
+            url: '../../kml/test.kml',
+            map: map,
+        });
+    };
+
     return(
         <StyledMapContainer>
             <GoogleMapReact
                 bootstrapURLKeys={{key: process.env.REACT_APP_GOOGLE_MAPS_KEY}}
                 defaultCenter={defaultCenter}
                 defaultZoom={9.5}
+                yesIWantToUseGoogleMapApiInternals
+                onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
             >
             {
                 trips.map((trip, i) => (
